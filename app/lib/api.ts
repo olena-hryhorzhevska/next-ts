@@ -20,12 +20,12 @@ axios.defaults.baseURL = 'https://next-v1-notes-api.goit.study';
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export const getSingleNote = async (id: string) => {
+  await delay(2000);
   const response = await axios.get<Note>(`/notes/${id}`);
   return response.data;
 }
 
 export const getNotes = async () => {
-  await delay(2000);
   const res = await axios.get<NoteListResponse>('/notes');
   return res.data;
 }
