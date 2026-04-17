@@ -3,6 +3,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { getSingleNote } from '@/app/lib/api';
 import { useParams } from 'next/navigation';
+import { notFound } from 'next/navigation';
 
 export default function NoteDetailsClient() {
   const { id } = useParams<{ id: string }>();
@@ -16,6 +17,10 @@ export default function NoteDetailsClient() {
     queryFn: () => getSingleNote(id),
     refetchOnMount: false,
   });
+
+  if (!note) {
+    notFound()
+  }
   if (isLoading) return <p>Loading...</p>;
   if (error || !note) return <p>Error loading note details.</p>;
   const formattedDate = note.updatedAt ? note.updatedAt : note.createdAt;

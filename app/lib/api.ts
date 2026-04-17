@@ -29,3 +29,16 @@ export const getNotes = async () => {
   const res = await axios.get<NoteListResponse>('/notes');
   return res.data;
 }
+
+export type Category = {
+  id: string;
+  name: string;
+  description: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export const getCategories = async () => {
+  const res = await axios.get<Category[]>('/categories');
+  return res.data;
+}

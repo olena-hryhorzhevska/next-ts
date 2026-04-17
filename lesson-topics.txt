@@ -1,0 +1,3 @@
+1. Nested Routes
+2. Catch All Routes (slug)
+3. Not Found page

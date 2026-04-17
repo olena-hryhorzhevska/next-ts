@@ -1,16 +1,16 @@
 import Link from "next/link";
+import CategoriesMenu from "../CategoriesMenu/CategoriesMenu";
+import { getCategories } from "@/app/lib/api";
 
-const Header = () => {
+const Header = async () => {
+  const categories = await getCategories()
   return (
     <header>
       <Link href="/">NoteLab</Link>
       <nav>
         <ul>
           <li>
-            <Link href="/">Home</Link>
-          </li>
-          <li>
-            <Link href="/notes">Notes</Link>
+            <CategoriesMenu categories={categories} />
           </li>
           <li>
             <Link href="/profile">Profile</Link>
