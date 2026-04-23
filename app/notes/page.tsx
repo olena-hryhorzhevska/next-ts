@@ -28,7 +28,6 @@ export default NotesPage;
 
 
 
-
 // import { getNotes } from '../lib/api';
 // import NoteList from '@/components/NoteList/NoteList';
 

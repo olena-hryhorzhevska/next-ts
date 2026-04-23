@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Category } from '@/app/lib/api';
+import css from './CategoriesMenu.module.css';
 
 type Props = {
   categories: Category[];
@@ -13,17 +14,21 @@ const CategoriesMenu = ({ categories }: Props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div>
-      <button onClick={toggle}>Notes</button>
+    <div className={css.menuContainer}>
+      <button onClick={toggle} className={css.menuBtn}>
+        Notes
+      </button>
+
       {isOpen && (
-        <ul>
-          <li>
+        <ul className={css.menu}>
+          <li className={css.menuItem}>
             <Link href={`/notes/filter/all`} onClick={toggle}>
-              All Notes
+              All notes
             </Link>
           </li>
+
           {categories.map(category => (
-            <li key={category.id}>
+            <li key={category.id} className={css.menuItem}>
               <Link href={`/notes/filter/${category.id}`} onClick={toggle}>
                 {category.name}
               </Link>

@@ -25,10 +25,12 @@ export const getSingleNote = async (id: string) => {
   return response.data;
 }
 
-export const getNotes = async () => {
-  const res = await axios.get<NoteListResponse>('/notes');
+export const getNotes = async (categoryId?: string) => {
+  const res = await axios.get<NoteListResponse>('/notes', {
+    params: { categoryId },
+  });
   return res.data;
-}
+};
 
 export type Category = {
   id: string;
