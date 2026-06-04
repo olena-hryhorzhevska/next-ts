@@ -15,18 +15,23 @@ export type NoteListResponse = {
   total: number;
 }
 
-axios.defaults.baseURL = 'https://next-v1-notes-api.goit.study';
+// axios.defaults.baseURL = 'http://localhost:3000/api';
+
+const nextServer = axios.create({
+  baseURL: "http://localhost:3000/api",
+  withCredentials: true,
+})
 
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export const getSingleNote = async (id: string) => {
   await delay(2000);
-  const response = await axios.get<Note>(`/notes/${id}`);
+  const response = await nextServer.get<Note>(`/notes/${id}`);
   return response.data;
 }
 
 export const getNotes = async (categoryId?: string) => {
-  const res = await axios.get<NoteListResponse>('/notes', {
+  const res = await nextServer.get<NoteListResponse>('/notes', {
     params: { categoryId },
   });
   return res.data;
@@ -41,6 +46,6 @@ export type Category = {
 }
 
 export const getCategories = async () => {
-  const res = await axios.get<Category[]>('/categories');
+  const res = await nextServer.get<Category[]>('/categories');
   return res.data;
 }
