@@ -30,19 +30,22 @@ const SignIn = () => {
   }
 
   return (
-    <form action={handleSubmit}>
-      <h1>Sign in</h1>
-      <label>
-        Email
-        <input type="email" name="email" required />
-      </label>
-      <label>
-        Password
-        <input type="password" name="password" required />
-      </label>
-      <button type="submit">Sign in</button>
-    </form>
-  )
+    <>
+      <form action={handleSubmit}>
+        <h1>Sign in</h1>
+        <label>
+          Email
+          <input type="email" name="email" required />
+        </label>
+        <label>
+          Password
+          <input type="password" name="password" required />
+        </label>
+        <button type="submit">Sign in</button>
+      </form>
+      {error && <p>{error}</p>}
+    </>
+  );
 }
 
 export default SignIn;
