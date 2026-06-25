@@ -1,21 +1,21 @@
-import type { Metadata } from 'next';
-import {Roboto} from 'next/font/google';
-import './globals.css';
-import Header from '@/components/Header/Header';
-import TanStackPrivider from '@/components/TanStackProvider/TanStackProvider';
-
+import type { Metadata } from "next";
+import { Roboto } from "next/font/google";
+import "./globals.css";
+import Header from "@/components/Header/Header";
+import TanStackPrivider from "@/components/TanStackProvider/TanStackProvider";
+import AuthProvider from "@/components/AuthProvider/AuthProvider";
 
 export const metadata: Metadata = {
-  title: 'NoteLab',
-  description: 'A simple note-taking app built with Next.js 13 and TypeScript.',
+  title: "NoteLab",
+  description: "A simple note-taking app built with Next.js 13 and TypeScript.",
 };
 
 const roboto = Roboto({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-roboto',
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-roboto",
   display: "swap",
-})
+});
 
 export default function RootLayout({
   children,
@@ -26,15 +26,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={ roboto.variable}>
+      <body className={roboto.variable}>
         <TanStackPrivider>
-          <Header />
-          <main>{children} {modal}</main>
-          <footer>
-            <p>
-              Created <time dateTime="2026">2026</time>
-            </p>
-          </footer>
+          <AuthProvider>
+            <Header />
+            <main>
+              {children} {modal}
+            </main>
+            <footer>
+              <p>
+                Created <time dateTime="2026">2026</time>
+              </p>
+            </footer>
+          </AuthProvider>
         </TanStackPrivider>
       </body>
     </html>
@@ -55,8 +59,6 @@ export default function RootLayout({
 //     },
 //   ];
 // }
-
-
 
 // Основные матрики продуктивности сайта
 // FCP - First Contentful Paint
