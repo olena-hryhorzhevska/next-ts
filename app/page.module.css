@@ -1,138 +1,118 @@
 .page {
-  --background: #fafafa;
-  --foreground: #fff;
-  --text-primary: #000;
-  --text-secondary: #666;
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
+  min-height: calc(100vh - 120px);
+  display: grid;
+  place-items: center;
+  padding: 60px 24px;
+  background: radial-gradient(circle at top, rgba(99, 102, 241, 0.12), transparent 36%),
+    radial-gradient(circle at right, rgba(167, 139, 250, 0.14), transparent 30%),
+    #f8fbff;
+}
+
+.heroCard {
+  width: min(1080px, 100%);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
   align-items: center;
-  justify-content: center;
-  background-color: var(--background);
+  padding: 44px;
+  border-radius: 36px;
+  background: #ffffff;
+  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.08);
 }
 
-.main {
-  display: flex;
-  flex: 1;
-  width: 100%;
-  max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
-}
-
-.intro {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+.heroText {
+  display: grid;
   gap: 24px;
 }
 
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
+.heroTag {
+  margin: 0;
+  color: #6366f1;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
 }
 
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
+.heroCard h1 {
+  margin: 0;
+  font-size: clamp(2.8rem, 4vw, 3.8rem);
+  color: #111827;
+  line-height: 1.02;
 }
 
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
+.heroCard p {
+  margin: 0;
+  color: #475569;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 620px;
 }
 
 .ctas {
   display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
+  flex-wrap: wrap;
   gap: 16px;
-  font-size: 14px;
 }
 
-.ctas a {
-  display: flex;
-  justify-content: center;
+.primary,
+.secondary {
+  display: inline-flex;
   align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
+  justify-content: center;
+  padding: 16px 26px;
+  border-radius: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
+.primary {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: #ffffff;
 }
 
-a.secondary {
-  border-color: var(--button-secondary-border);
+.secondary {
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  color: #4338ca;
+  background: #ffffff;
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
+.primary:hover,
+.secondary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 38px rgba(99, 102, 241, 0.18);
 }
 
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
-  }
+.heroImages {
+  display: grid;
+  place-items: center;
+}
 
-  .intro {
-    gap: 16px;
-  }
+.heroImage {
+  width: 100%;
+  height: auto;
+  border-radius: 32px;
+  object-fit: cover;
+}
 
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
+@media (max-width: 900px) {
+  .heroCard {
+    grid-template-columns: 1fr;
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
-
+@media (max-width: 640px) {
   .page {
-    --background: #000;
-    --foreground: #000;
+    padding: 40px 18px;
+  }
 
-    --text-primary: #ededed;
-    --text-secondary: #999;
+  .heroCard {
+    padding: 32px;
+  }
 
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
+  .heroCard h1 {
+    font-size: 2.7rem;
   }
 }
+

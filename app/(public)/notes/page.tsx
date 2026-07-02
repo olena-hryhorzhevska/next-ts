@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { getNotes, Note } from '../../lib/api';
 import NoteList from '@/components/NoteList/NoteList';
-
+import styles from './page.module.css';
 
 const NotesPage = ()=> {
   const [notes, setNotes] = useState<Note[]>([]);
@@ -12,13 +12,28 @@ const NotesPage = ()=> {
     if (response.notes) {
       setNotes(response.notes);
     }
-}
+  }
 
   return (
-    <section>
-      <h1>Notes Page</h1>
-      <button onClick={handleClick}>Get my notes</button>
-      {notes.length > 0 && <NoteList notes={notes} />}
+    <section className={styles.notesPage}>
+      <div className={styles.heroCard}>
+        <div>
+          <h1 className={styles.pageTitle}>Notes</h1>
+          <p className={styles.subtitle}>
+            Fetch your notes, browse your list, and keep your ideas neatly organized.
+          </p>
+        </div>
+        <button className={styles.primaryButton} onClick={handleClick}>
+          Load notes
+        </button>
+      </div>
+      {notes.length > 0 ? (
+        <NoteList notes={notes} />
+      ) : (
+        <div className={styles.emptyState}>
+          <p>No notes loaded yet. Use the button above to refresh your list.</p>
+        </div>
+      )}
     </section>
   )
 }

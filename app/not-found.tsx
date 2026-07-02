@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import styles from './not-found.module.css';
 
 export default function NotFound() {
   const router = useRouter();
@@ -12,9 +13,11 @@ export default function NotFound() {
   }, [router]);
   
   return (
-    <div>
-      <h1>404 - Page Not Found</h1>
-      <p>The page you are looking for does not exist. Redirecting to the homepage...</p>
+    <div className={styles.notFoundPage}>
+      <section className={styles.errorCard}>
+        <h1 className={styles.heading}>404 - Page Not Found</h1>
+        <p className={styles.description}>The page you are looking for does not exist. Redirecting to the homepage...</p>
+      </section>
     </div>
   )
 }

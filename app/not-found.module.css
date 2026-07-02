@@ -1,0 +1,26 @@
+.notFoundPage {
+  min-height: calc(100vh - 186px);
+  display: grid;
+  place-items: center;
+  padding: 40px 24px;
+}
+
+.errorCard {
+  max-width: 720px;
+  width: 100%;
+  padding: 40px;
+  border-radius: 32px;
+  background: #ffffff;
+  box-shadow: 0 30px 70px rgba(15, 23, 42, 0.08);
+}
+
+.heading {
+  font-size: clamp(2rem, 2.5vw, 2.7rem);
+  margin-bottom: 16px;
+  color: #111827;
+}
+
+.description {
+  color: #475569;
+  line-height: 1.75;
+}

@@ -1,20 +1,20 @@
 import Link from 'next/link';
+import styles from './page.module.css';
 
 const ProfilePage = () => {
   return (
-    <div>
-      <h1>Profile</h1>
-      <p>This is the profile page.</p>
-      <Link href='/profile/edit'>Edit Profile</Link>
+    <div className={styles.profilePage}>
+      <section className={styles.profileCard}>
+        <h1 className={styles.profileTitle}>Your profile</h1>
+        <p className={styles.profileText}>
+          Welcome to NoteLab. Keep your notes organized and easy to find.
+        </p>
+        <Link href='/profile/edit' className={styles.profileLink}>
+          Edit Profile
+        </Link>
+      </section>
     </div>
   );
 };
 
 export default ProfilePage;
-
-
-// /docs/setup/install/windows
-// app/dosc/[...slug]/page.tsx
-
-// /docs/setup/install
-// ['setup', 'install']

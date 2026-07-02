@@ -1,0 +1,51 @@
+.notesPage {
+  width: min(1180px, 100%);
+  margin: 56px auto;
+  padding: 0 24px 48px;
+}
+
+.heroCard {
+  display: grid;
+  gap: 24px;
+  padding: 32px 30px;
+  border-radius: 32px;
+  background: #ffffff;
+  box-shadow: 0 28px 70px rgba(15, 23, 42, 0.08);
+}
+
+.pageTitle {
+  margin: 0;
+  font-size: clamp(2rem, 2.4vw, 2.6rem);
+  color: #111827;
+}
+
+.subtitle {
+  color: #475569;
+  line-height: 1.8;
+  max-width: 720px;
+}
+
+.primaryButton {
+  width: fit-content;
+  padding: 14px 24px;
+  border-radius: 18px;
+  border: none;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primaryButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+}
+
+.emptyState {
+  margin-top: 28px;
+  padding: 28px;
+  border-radius: 28px;
+  background: #f8fafc;
+  color: #475569;
+}

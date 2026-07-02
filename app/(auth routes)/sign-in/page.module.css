@@ -1,0 +1,74 @@
+.authPage {
+  width: min(460px, 100%);
+  margin: 56px auto;
+  padding: 32px 28px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 28px 70px rgba(15, 23, 42, 0.08);
+}
+
+.authForm {
+  display: grid;
+  gap: 22px;
+}
+
+.authHeading {
+  margin: 0;
+  font-size: clamp(2rem, 2.4vw, 2.4rem);
+  color: #111827;
+}
+
+.formGroup {
+  display: grid;
+  gap: 18px;
+}
+
+.formLabel {
+  display: grid;
+  gap: 10px;
+  color: #475569;
+  font-weight: 600;
+}
+
+.formInput {
+  width: 100%;
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid #d7dae8;
+  background: #f8fafc;
+  font-size: 1rem;
+  color: #0f172a;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.12);
+}
+
+.submitButton {
+  width: 100%;
+  padding: 15px 18px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border: none;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submitButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 32px rgba(99, 102, 241, 0.22);
+}
+
+.errorMessage {
+  margin-top: 12px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: #fee2e2;
+  color: #b91c1c;
+}

@@ -1,14 +1,15 @@
+import styles from './layout.module.css';
+
 type Props = {
   children: React.ReactNode;
   sidebar: React.ReactNode;
 }
 
-
 const NotesLayout = ({ children, sidebar }: Props) => {
   return (
-    <section style={{display: 'flex', gap: "20px"}}>
-      <aside style={{width: '30%', borderRight: '1px solid #ccc', marginRight: '20px'}}>{ sidebar}</aside>
-      <main>{ children}</main>
+    <section className={styles.layout}>
+      <aside className={styles.sidebar}>{sidebar}</aside>
+      <main className={styles.content}>{children}</main>
     </section>
   )
 }

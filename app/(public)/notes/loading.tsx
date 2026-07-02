@@ -1,7 +1,9 @@
+import styles from './loading.module.css';
+
 const Loading = () => {
   return (
-    <div>
-      <h2>Загрузка...</h2>
+    <div className={styles.statusBlock}>
+      <h2>Loading notes...</h2>
     </div>
   )
 }

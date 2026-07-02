@@ -1,0 +1,59 @@
+.noteDetails {
+  width: min(900px, 100%);
+  margin: 56px auto;
+  padding: 0 24px 48px;
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 18px;
+  border-radius: 16px;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  background: #ffffff;
+  color: #4338ca;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.backButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(99, 102, 241, 0.16);
+}
+
+.card {
+  margin-top: 24px;
+  padding: 32px;
+  border-radius: 32px;
+  background: #ffffff;
+  box-shadow: 0 28px 80px rgba(15, 23, 42, 0.08);
+}
+
+.title {
+  margin: 0 0 18px;
+  font-size: clamp(2rem, 2.4vw, 2.6rem);
+  color: #111827;
+}
+
+.content {
+  margin: 0 0 20px;
+  color: #475569;
+  line-height: 1.8;
+}
+
+.meta {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.statusCard {
+  width: min(640px, 100%);
+  margin: 56px auto;
+  padding: 28px;
+  border-radius: 28px;
+  background: #ffffff;
+  box-shadow: 0 24px 54px rgba(15, 23, 42, 0.08);
+  color: #475569;
+}

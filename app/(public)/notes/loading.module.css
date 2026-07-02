@@ -1,0 +1,10 @@
+.statusBlock {
+  width: min(620px, 100%);
+  margin: 56px auto;
+  padding: 26px 28px;
+  border-radius: 28px;
+  background: #ffffff;
+  box-shadow: 0 24px 54px rgba(15, 23, 42, 0.08);
+  color: #475569;
+  text-align: center;
+}

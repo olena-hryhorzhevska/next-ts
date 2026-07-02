@@ -1,0 +1,24 @@
+.noteItem {
+  list-style: none;
+  background: #ffffff;
+  padding: 20px 22px;
+  border-radius: 22px;
+  box-shadow: 0 15px 40px rgba(15, 23, 42, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.noteItem + .noteItem {
+  margin-top: 16px;
+}
+
+.noteLink {
+  display: block;
+  color: #4338ca;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.noteItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.1);
+}

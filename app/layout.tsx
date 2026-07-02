@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
+import { Suspense } from "react";
 import "./globals.css";
+import styles from "./layout.module.css";
 import Header from "@/components/Header/Header";
 import TanStackPrivider from "@/components/TanStackProvider/TanStackProvider";
 import AuthProvider from "@/components/AuthProvider/AuthProvider";
@@ -26,14 +28,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={roboto.variable}>
+      <body className={`${roboto.variable} ${styles.body}`}>
         <TanStackPrivider>
           <AuthProvider>
             <Header />
-            <main>
-              {children} {modal}
+            <main className={styles.main}>
+              <Suspense fallback={<div>Loading...</div>}>
+                {children}
+              </Suspense>
+              {modal && (
+                <Suspense fallback={null}>
+                  {modal}
+                </Suspense>
+              )}
             </main>
-            <footer>
+            <footer className={styles.footer}>
               <p>
                 Created <time dateTime="2026">2026</time>
               </p>

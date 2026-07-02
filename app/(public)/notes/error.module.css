@@ -1,0 +1,36 @@
+.errorBlock {
+  width: min(640px, 100%);
+  margin: 56px auto;
+  padding: 28px;
+  border-radius: 28px;
+  background: #ffffff;
+  box-shadow: 0 24px 54px rgba(15, 23, 42, 0.08);
+}
+
+.heading {
+  margin: 0 0 14px;
+  font-size: 1.8rem;
+  color: #111827;
+}
+
+.message {
+  margin: 0 0 22px;
+  color: #475569;
+  line-height: 1.8;
+}
+
+.retryButton {
+  padding: 14px 20px;
+  border-radius: 18px;
+  border: none;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.retryButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 36px rgba(99, 102, 241, 0.18);
+}

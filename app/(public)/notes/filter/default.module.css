@@ -1,0 +1,35 @@
+.sidebarNav {
+  padding: 24px;
+  border-radius: 28px;
+  background: #ffffff;
+  box-shadow: 0 28px 70px rgba(15, 23, 42, 0.08);
+}
+
+.sidebarTitle {
+  margin: 0 0 18px;
+  font-size: 1.15rem;
+  color: #111827;
+}
+
+.sidebarList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.sidebarLink {
+  display: block;
+  padding: 12px 16px;
+  border-radius: 18px;
+  color: #334155;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebarLink:hover,
+.sidebarLink:focus-visible {
+  background: rgba(99, 102, 241, 0.08);
+  color: #4338ca;
+}
