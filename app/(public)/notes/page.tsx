@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import { getNotes, Note } from '../../lib/api';
+import { getNotes, Note } from '../../lib/api/api';
 import NoteList from '@/components/NoteList/NoteList';
 import styles from './page.module.css';
 

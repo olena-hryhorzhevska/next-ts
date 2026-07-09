@@ -1,6 +1,6 @@
 import Link from "next/link";
 import CategoriesMenu from "../CategoriesMenu/CategoriesMenu";
-import { getCategories } from "@/app/lib/api";
+import { getCategories } from "@/app/lib/api/clientApi";
 import AuthNavigation from "../AuthNavigation/AuthNavigation";
 import styles from "./Header.module.css";
 

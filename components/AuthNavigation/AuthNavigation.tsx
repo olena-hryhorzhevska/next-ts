@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useAuthStore } from "@/app/lib/store/authStore";
 import { useRouter } from "next/navigation";
-import { logout } from "@/app/lib/api";
+import { logout } from "@/app/lib/api/clientApi";
 import styles from "./AuthNavigation.module.css";
 
 const AuthNavigation = () => {

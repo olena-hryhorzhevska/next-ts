@@ -1,4 +1,4 @@
-import { Note } from '../../app/lib/api';
+import { Note } from '../../app/lib/api/api';
 import Link from 'next/link';
 import styles from './NoteItem.module.css';
 

@@ -1,4 +1,4 @@
-import { Note } from '../../app/lib/api';
+import { Note } from '../../app/lib/api/api';
 import NoteItem from '../NoteItem/NoteItem';
 import styles from './NoteList.module.css';
 

@@ -1,7 +1,7 @@
 'use client';
 
 import { useQuery } from '@tanstack/react-query';
-import { getSingleNote } from '@/app/lib/api';
+import { getSingleNote } from '@/app/lib/api/api';
 import { useParams } from 'next/navigation';
 import { notFound } from 'next/navigation';
 import { useRouter } from 'next/navigation';

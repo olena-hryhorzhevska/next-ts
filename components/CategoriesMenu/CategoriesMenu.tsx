@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import { Category } from '@/app/lib/api';
+import { Category } from '@/app/lib/api/api';
 import css from './CategoriesMenu.module.css';
 
 type Props = {
