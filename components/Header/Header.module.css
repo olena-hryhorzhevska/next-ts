@@ -45,11 +45,15 @@
   font-weight: 600;
   padding: 10px 16px;
   border-radius: 16px;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
 
+}
 .navLink:hover,
-.navLink:focus-visible {
+.navLink:focus-visible,
+.activeNavLink {
   color: #4338ca;
-  background: rgba(99, 102, 241, 0.08);
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  box-shadow: 0 16px 28px rgba(99, 102, 241, 0.18);
 }

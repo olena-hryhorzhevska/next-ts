@@ -2,8 +2,9 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import { Category } from '@/app/lib/api/api';
+import { Category } from '@/app/lib/api/clientApi';
 import css from './CategoriesMenu.module.css';
+import { usePathname } from 'next/navigation';
 
 type Props = {
   categories: Category[];
@@ -14,6 +15,8 @@ const CategoriesMenu = ({ categories }: Props) => {
   const menuRef = useRef<HTMLDivElement | null>(null);
   const toggle = () => setIsOpen((open) => !open);
   const closeMenu = () => setIsOpen(false);
+  const pathName = usePathname()
+  const isNotesActive = pathName.startsWith('/notes');
 
   useEffect(() => {
     if (!isOpen) return;
@@ -30,7 +33,10 @@ const CategoriesMenu = ({ categories }: Props) => {
 
   return (
     <div ref={menuRef} className={css.menuContainer}>
-      <button onClick={toggle} className={css.menuBtn}>
+      <button
+        onClick={toggle}
+        className={`${css.menuBtn} ${isNotesActive ? css.active : ""}`}
+      >
         Notes
       </button>
 
@@ -42,7 +48,7 @@ const CategoriesMenu = ({ categories }: Props) => {
             </Link>
           </li>
 
-          {categories.map(category => (
+          {categories.map((category) => (
             <li key={category.id} className={css.menuItem}>
               <Link href={`/notes/filter/${category.id}`} onClick={closeMenu}>
                 {category.name}

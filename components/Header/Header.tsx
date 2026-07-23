@@ -1,11 +1,13 @@
 import Link from "next/link";
-import CategoriesMenu from "../CategoriesMenu/CategoriesMenu";
 import { getCategories } from "@/app/lib/api/clientApi";
 import AuthNavigation from "../AuthNavigation/AuthNavigation";
 import styles from "./Header.module.css";
+import AuthenticatedNotesMenu from "./AuthenticatedNotesMenu";
+import NavigationLinks from "./NavigationLinks";
 
 const Header = async () => {
   const categories = await getCategories();
+
   return (
     <header className={styles.header}>
       <div className={styles.brandWrapper}>
@@ -17,19 +19,8 @@ const Header = async () => {
 
       <nav className={styles.navBar}>
         <ul className={styles.navList}>
-          <li>
-            <CategoriesMenu categories={categories} />
-          </li>
-          <li>
-            <Link href="/profile" className={styles.navLink}>
-              Profile
-            </Link>
-          </li>
-          <li>
-            <Link href="/about" className={styles.navLink}>
-              About
-            </Link>
-          </li>
+          <AuthenticatedNotesMenu categories={categories} />
+          <NavigationLinks />
           <AuthNavigation />
         </ul>
       </nav>

@@ -1,7 +1,10 @@
 import Link from 'next/link';
 import styles from './page.module.css';
+import { getServerMe } from '@/app/lib/api/serverApi';
 
-const ProfilePage = () => {
+const ProfilePage = async () => {
+  const user = await getServerMe();
+  
   return (
     <div className={styles.profilePage}>
       <section className={styles.profileCard}>
@@ -9,7 +12,9 @@ const ProfilePage = () => {
         <p className={styles.profileText}>
           Welcome to NoteLab. Keep your notes organized and easy to find.
         </p>
-        <Link href='/profile/edit' className={styles.profileLink}>
+        <h2>Name: {user.userName}</h2>
+        <h2>Email: {user.email}</h2>
+        <Link href="/profile/edit" className={styles.profileLink}>
           Edit Profile
         </Link>
       </section>

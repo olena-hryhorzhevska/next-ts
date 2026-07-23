@@ -17,7 +17,8 @@ const AuthNavigation = () => {
   const handleLogout = async () => {
     await logout();
     clearIsAuthenticated();
-    router.push('/sign-in');
+    router.replace('/sign-in');
+    router.refresh();
   };
 
   return isAuthenticated ? (

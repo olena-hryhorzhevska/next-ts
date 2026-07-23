@@ -1,4 +1,4 @@
-import { getNotes } from "@/app/lib/api/api";
+import { getNotes } from "@/app/lib/api/clientApi";
 import NoteList from "@/components/NoteList/NoteList";
 import styles from './page.module.css';
 

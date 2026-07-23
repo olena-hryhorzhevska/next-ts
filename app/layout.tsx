@@ -33,14 +33,8 @@ export default function RootLayout({
           <AuthProvider>
             <Header />
             <main className={styles.main}>
-              <Suspense fallback={<div>Loading...</div>}>
-                {children}
-              </Suspense>
-              {modal && (
-                <Suspense fallback={null}>
-                  {modal}
-                </Suspense>
-              )}
+              {children}
+              {modal && <Suspense fallback={null}>{modal}</Suspense>}
             </main>
             <footer className={styles.footer}>
               <p>

@@ -1,26 +1,40 @@
 // app/about/page.tsx
 
-import { redirect } from "next/navigation";
+import styles from "./page.module.css";
 
-const AboutPage = () => {
-  redirect("/");
-  return null;
-};
+export default function AboutPage() {
+  return (
+    <main className={styles.container}>
+      <section className={styles.hero}>
+        <h1>About NoteLab</h1>
+        <p className={styles.lead}>
+          NoteLab is a simple and modern note-taking application built with
+          Next.js App Router. It helps you organize ideas, create categories,
+          and keep everything in one place.
+        </p>
+      </section>
 
-export default AboutPage;
+      <section className={styles.grid}>
+        <article className={styles.card}>
+          <h2>✨ Simple</h2>
+          <p>
+            Create, edit, and organize notes without unnecessary complexity.
+          </p>
+        </article>
 
+        <article className={styles.card}>
+          <h2>📂 Organized</h2>
+          <p>Group your notes into categories to keep everything structured.</p>
+        </article>
 
-
-
-
-// OG
-// meta property="og:title" content="..." />
-// meta property="og:description" content="..." />
-// meta property="og:image" content="..." />
-// meta property="og:url" content="..." />
-// meta property="og:type" content="article" />
-// meta property="og:site_name" content="..." />
-
-// Twitter
-// meta name="twitter:title" content="..." />
-// meta name="twitter:description" content="..." />
+        <article className={styles.card}>
+          <h2>⚡ Fast</h2>
+          <p>
+            Built with Next.js App Router for a smooth and responsive
+            experience.
+          </p>
+        </article>
+      </section>
+    </main>
+  );
+}
